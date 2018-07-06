@@ -1,0 +1,60 @@
+<%-include header.ejs%>
+
+
+
+
+
+
+<script>
+
+</script>
+
+
+
+<script type="text/javascript" src="/framework7/dist/js/framework7.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+      var FRAMEWORK7 = Framework7;
+      var $$ = Dom7;
+      var TEMPLATE7 = Template7;
+      var PROGRAM_NAME = "<%=program%>";
+      var ERROR = "<%=error%>";
+</script>
+<script type="text/javascript" src="/javascripts/common.js"></script>
+<script>
+    
+    commonLib.init();
+    var init = function(){
+        
+        if(ERROR == "1"){
+            App.dialog.create({
+                title: 'Error',
+                text: '<%=message%>',
+                
+            }).open();
+
+        }else{
+            App.dialog.create({
+                title: 'Success',
+                text: '<%=message%>',
+                buttons: [
+                    {
+                        text: 'Go To Home',
+                        onClick:function(){
+                            window.location.href = "/"+PROGRAM_NAME+"/home";
+   
+                        }
+                       
+                    },
+          
+                ],
+                verticalButtons: true,
+            }).open();
+        }
+        
+
+    }();
+   
+</script>
+    
+<%-include footer.ejs%>

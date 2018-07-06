@@ -1,0 +1,110 @@
+<%-include header.ejs%>
+        <div class="page no-navbar no-toolbar no-swipeback">
+                <div class="page-content login-screen-content">
+                  <div class="login-screen-title">Enroll</div>
+                  <form autocomplete="off" id="register_form" action="javascript:void(0);"> 
+                    <div class="list">
+                      <ul>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">First Name</div>
+                            <div class="item-input">
+                              <input type="text" name="fname" id="fname" placeholder="Firstname" autocomplete="off" required pattern="[a-zA-Z]+">
+                            </div>
+                          </div>
+                        </li>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">Last Name</div>
+                            <div class="item-input">
+                              <input type="text" name="lname" id="lname" placeholder="Last Name" autocomplete="off" required pattern="[[a-zA-Z]+">
+                            </div>
+                          </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                    <div class="item-title item-label">Email</div>
+                                        <div class="item-input">
+                                        <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">Password</div>
+                                    <div class="item-input">
+                                        <input type="password" name="pass" id="pass" placeholder="Your password" autocomplete="off" required>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Confirm Password</div>
+                                        <div class="item-input">
+                                            <input type="password" id="cpass" name="cpass" name="Confirm Password" placeholder="Confirm Password" autocomplete="off" required>
+                                        </div>
+                                    </div>
+                        </li>   
+                        <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Mobile</div>
+                                        <div class="item-input">
+                                            <input type="number" name="Mobile" id="Mobile" placeholder="Mobile" maxlength="10" minlength="10" autocomplete="off" required>
+                                        </div>
+                                </div>
+                        </li>   
+                        <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Type</div>
+                                        <div class="item-input">
+                                            <select  name="type"   id="type" placeholder="Type" autocomplete="off" required>
+                                                <option>Patient</option>
+                                                <option>Care Coach</option>
+                                            </select>
+                                        </div>
+                                </div>
+                        </li>  
+                        <li class="item-content item-input" id="spec_li" style="display: none;">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Specialization</div>
+                                        <div class="item-input">
+                                            <input  type="text" id="specs" name="specs" placeholder="Specialization" autocomplete="off" required>
+                                        </div>
+                                </div>
+                        </li>                                                                  
+                      </ul>
+                    </div>
+                    <div class="list">
+                 <div class="block-footer">
+
+                      <ul>
+                            <button class="col button button-outline color-red" id="reg_button">Submit</button>
+                      </ul>
+                      </div>
+                      <div class="block-footer">
+                        <ul>
+                                <p><a href="/<%=program_name%>/login" class="item-link list-button" id="toLoginPage-btn">Back To Login</a></p>
+                        </ul>
+                            
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+  
+  <script type="text/javascript" src="/framework7/dist/js/framework7.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>
+      var FRAMEWORK7 = Framework7;
+      var $$ = Dom7;
+      var TEMPLATE7 = Template7;
+      var PROGRAM_NAME = "<%=program_name%>";
+  </script>
+  <script type="text/javascript" src="/javascripts/common.js"></script>
+  <script type="text/javascript" src="/javascripts/register.js"></script>
+  <script>
+      console.log("triggred!!");
+    commonLib.init();
+    registerLib.init();
+  </script>
+  <%-include footer.ejs%>

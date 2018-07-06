@@ -1,0 +1,134 @@
+<%-include header.ejs%>
+
+  <div class="panel-overlay"></div>
+  <div class="panel panel-left panel-cover <%=theme%>">
+    <div class="navbar">
+      <div class="navbar-inner" style="padding:16px;font-size:16px">
+        Hi
+        <%=coach.fname+" "+coach.lname%>!!
+      </div>
+    </div>
+    <div class="list links-list no-hairlines" style="margin-top:0px">
+      <ul>
+        <li>
+          <a href="#" class="panel-close" id="home-link">
+            <i class="f7-icons ios-only">home</i>
+            <i class="material-icons md-only ">home</i>Home</a>
+        </li>
+        <li>
+          <a href="#" class="panel-close" id="client-link">
+            <i class="f7-icons ios-only">list</i>
+            <i class="material-icons md-only ">list_alt</i>Client List</a>
+        </li>
+        <li>
+          <a href="#" class="panel-close" id="logout-link">
+            <i class="f7-icons ios-only">logout_fill</i>
+            <i class="material-icons md-only ">exit_to_app</i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="views">
+    <div class="view view-main <%=theme%>">
+      <div class="pages">
+        <div data-name="home" id="home-page" class="page page-current navbar-fixed toolbar-fixed">
+          <!-- Top Navbar-->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <!-- Additional "left sliding" class -->
+              <div class="left sliding">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                  <i class="f7-icons ios-only">bars</i>
+                  <i class="material-icons md-only">menu</i>
+
+                </a>
+              </div>
+              <!-- Additional "center sliding" class -->
+              <div class="title sliding" style="font-size:15px;" id="appTitle">
+                <%=appname%>
+              </div>
+            </div>
+          </div>
+          <!-- /End of Top Navbar-->
+          <div class="page-content" id="home-content">
+            <div class="card demo-card-header-pic">
+              <div style="background-image:url(https://s3.eu-central-1.amazonaws.com/health-link-app-content/CareCoachProgramImage.png)"
+                class="card-header align-items-flex-end">
+                <p style="color:black">My Clients</p>
+              </div>
+              <div class="card-content card-content-padding">
+                <p> List of clients with medical details
+                </p>
+                <a href="#" class="col button button-big button-raised button-fill color-blue" style="margin-bottom:10px" id="list-button">Get List</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-content" id="clienlist-content" style="display: none;">
+
+            <div class="list">
+              <ul>
+                <%
+                                if(clients){
+                                for(var key in clients){ %>
+                  <li class="accordion-item">
+                    <a href="#" class="item-link item-content">
+                      <div class="item-media">
+                        <i class="f7-icons">person</i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title">
+                          <div class="item-header">Name</div>
+                          |
+                          <%=clients[key]['fname']+" "+clients[key]['lname']%>
+                        </div>
+                        <div class="item-after">Details</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <div class="list no-hairlines">
+                          <h3 style="color:#ff0000">Medical conditions</h3>
+                          <ol>
+                            <%for(var cond_key in clients[key]['conditions']){%>
+                              <li>
+                                <%=clients[key]['conditions'][cond_key]['conditionName']%>
+                              </li>
+                              <%}%>
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <%}}else{%>
+                    <li>No Clients Yet!!</li>
+                    <%}%>
+              </ul>
+            </div>
+
+          </div>
+          <!-- Bottom Toolbar-->
+
+          <!-- /End of Bottom Toolbar-->
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/framework7/dist/js/framework7.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+    crossorigin="anonymous"></script>
+  <script>
+    var FRAMEWORK7 = Framework7;
+    var TEMPLATE7 = Template7;
+    var $$ = Dom7;
+    var PROGRAM_NAME = "<%=program%>";
+  </script>
+  <script src="/javascripts/common.js"></script>
+  <script src="/javascripts/home_coach.js"></script>
+  <script>
+    commonLib.init();
+    HomeLib.init();
+  </script>
+  <%-include footer.ejs%>

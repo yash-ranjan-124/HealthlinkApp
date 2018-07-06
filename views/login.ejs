@@ -1,0 +1,83 @@
+<%-include header.ejs%>
+  <div class="notifications list-block media-list">
+    <ul>
+
+      <!-- Single notification item -->
+      <li class="notification-item">
+        <!-- Custom notification content -->
+      </li>
+
+    </ul>
+  </div>
+  <div class="page no-navbar no-toolbar no-swipeback">
+    <div class="page-content login-screen-content">
+      <div class="login-screen-title">Login</div>
+      <form autocomplete="off" id="login-form" action="javascript:void(0);">
+        <div class="list">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Username</div>
+                <div class="item-input">
+                  <input type="text" name="user_email" placeholder="Your email" autocomplete="off" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Password</div>
+                <div class="item-input">
+                  <input type="password" name="user_pass" placeholder="Your password" autocomplete="off" required>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Type</div>
+                <div class="item-input">
+                  <select name="user_type" id="user_type" placeholder="user type" autocomplete="off" required>
+                    <option>patient</option>
+                    <option selected>Care Coach</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="list">
+          <div class="block-footer">
+
+            <ul>
+              <button class="col button button-outline color-red" id="signin-btn">Sign In</button>
+            </ul>
+          </div>
+          <div class="block-footer">
+            <ul>
+              <button class="col button button-outline color-blue">Sign Up</button>
+            </ul>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript" src="/framework7/dist/js/framework7.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    var FRAMEWORK7 = Framework7;
+    var $$ = Dom7;
+    var TEMPLATE7 = Template7;
+    var PROGRAM = "<%=program_name%>";
+  </script>
+  <script type="text/javascript" src="/javascripts/common.js"></script>
+  <script type="text/javascript" src="/javascripts/login.js"></script>
+  <script>
+    console.log("triggred!!");
+    commonLib.init();
+    loginLib.init();
+  </script>
+  <%-include footer.ejs%>

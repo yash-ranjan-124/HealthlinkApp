@@ -1,0 +1,116 @@
+<%-include header.ejs%>
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-cover <%=theme%> bg-color-black">
+        <div class="block" style="padding-bottom: 0px;margin-bottom: 0px;border-bottom: 1px solid #383333">
+            <div class="icon-section" style="height: 90px;position: relative;left: 25%;">
+                <img src="/images/user-512.png" style="height: 100%; width: 50%;">
+            </div>
+            <div class="text-content">
+                <p class="text-color-white" style="text-align: center;">
+                    Hi
+                    <%=user.fname+" "+user.lname%>!!
+                </p>
+            </div>
+        </div>
+        <div class="list links-list no-hairlines bg-color-black" style="margin-top:0px">
+            <ul>
+                <li class="bg-color-black no-hairlines">
+                    <a href="#" class="panel-close  text-color-white" id="homePage-link" style="font-size: 15px;border-bottom: 1px solid #383333">
+                        <i class="f7-icons ios-only">home_fill</i>
+                        <i class="material-icons md-only ">home</i>Home</a>
+                </li>
+                <%if(program == "program1"){%>
+                    <li class="bg-color-black no-hairlines">
+
+                        <a href="#" class="panel-close text-color-white" id="findCoach-link" style="font-size: 15px;border-bottom: 1px solid #383333">
+                            <i class="f7-icons ios-only">persons_fill</i>
+                            <i class="material-icons md-only ">business</i>Book Care Coach</a>
+                    </li>
+                    <%}%>
+            </ul>
+        </div>
+    </div>
+    <div class="views">
+        <div class="view view-main <%=theme%>">
+            <div class="pages">
+                <div data-page="home" class="page navbar-fixed toolbar-fixed">
+                    <!-- Top Navbar-->
+                    <div class="navbar bg-color-black">
+                        <div class="navbar-inner">
+                            <!-- Additional "left sliding" class -->
+                            <div class="left sliding">
+                                <a href="#" class="link icon-only panel-open text-color-white" data-panel="left">
+                                    <i class="f7-icons ios-only">bars</i>
+                                    <i class="material-icons md-only">menu</i>
+                                </a>
+                            </div>
+                            <!-- Additional "center sliding" class -->
+                            <div class="title sliding text-color-white" style="font-size:15px;" id="appTitle">
+                                <%=appname%>
+                            </div>
+                            <div class="right sliding">
+                                <img src="https://s3.eu-central-1.amazonaws.com/health-link-app-content/PfizerIcon.png ">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End of Top Navbar-->
+                    <div class="page-content bg-color-black" id="userhome-page">
+                        <div class="card demo-card-header-pic">
+                            <div style="background-image:url(https://s3.eu-central-1.amazonaws.com/health-link-app-content/ArthritisProgramImage.png)"
+                                class="card-header align-items-flex-end">
+                                <h2 style="font-family: 'Russo One', sans-serif;position: absolute;top:1px;left: 5px;">Explore</h2>
+                            </div>
+                        </div>
+                        <div class="card demo-card-header-pic" id="listProgram-button">
+                            <div style="background-image:url(https://media.istockphoto.com/photos/medicine-doctor-and-stethoscope-in-hand-touching-icon-medical-network-picture-id823767128?s=2048x2048)"
+                                class="card-header align-items-flex-end">
+                                <h2 style="font-family: 'Russo One', sans-serif;position: absolute;top:1px;left: 5px;">About Program</h2>
+                            </div>
+                        </div>
+                        <div class="card demo-card-header-pic" id="HomeToHireCoach-button">
+                            <div style="background-image:url(http://www.nursesathome.com.my/images/banner_04.jpg)" class="card-header align-items-flex-end">
+                                <h2 style="font-family: 'Russo One', sans-serif;position: absolute;top:1px;left: 5px;">Book Care Coach</h2>
+                            </div>
+                        </div>
+
+                        <div class="card demo-card-header-pic" id="feedback-button">
+                            <div style="background-image:url(http://whooshcare.com.au/wp-content/uploads/2015/04/Banner-feedback.jpg)" class="card-header align-items-flex-end">
+                                <h2 style="font-family: 'Russo One', sans-serif;position: absolute;top:1px;left: 5px;">FeedBack</h2>
+                            </div>
+                        </div>
+
+
+                        <div class="space0_1">
+                        </div>
+
+                    </div>
+                    <%-include careCoach.ejs%>
+
+                        <%-include arthritisCare.ejs%>
+
+                            <%-include aboutArthritis.ejs%>
+
+                                <%-include treatArthritis.ejs%>
+                                    <%-include livingArthritis.ejs%>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/framework7/dist/js/framework7.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        let FRAMEWORK7 = Framework7;
+        let TEMPLATE7 = Template7;
+        let $$ = Dom7;
+        var PROGRAM_NAME = "<%=program%>";
+    </script>
+    <script src="/javascripts/common.js"></script>
+    <script src="/javascripts/home_user.js"></script>
+    <script>
+        commonLib.init();
+        HomeLib.init();
+    </script>
+    <%-include footer.ejs%>

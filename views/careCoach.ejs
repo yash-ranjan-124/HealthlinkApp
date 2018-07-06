@@ -1,0 +1,82 @@
+<div class="page-content color-theme-black" id="hireCoach-page" style="display:none;">
+    <div class="block block-strong row">
+        <div class="col">
+            <a class="button convert-form-to-data" id="backToHome-button">Back To Home</a>
+        </div>
+    </div>
+    <form class="list" id="findCoach-form">
+        <ul>
+            <li>
+
+                <div class="block block-strong row" id="alert-box" style="display:none;">
+                    <div class="col" style="text-align: center;color:red"></div>
+
+                </div>
+
+            </li>
+            <li>
+                <div class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">Height(cms)</div>
+                        <div class="item-input-wrap">
+                            <input type="tel" name="height" id="height" placeholder="height(cms)" required autocomplete="false">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">Weight(Kg)</div>
+                        <div class="item-input-wrap">
+                            <input type="tel" name="weight" id="weight" placeholder="weight" required autocomplete="false">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <a class="item-link smart-select smart-select-init " data-open-in="popup" data-searchbar="true" data-searchbar-placeholder="Search conditions">
+                    <select name="conditions" id="conditions" multiple>
+                        <%
+                var userConditions = [];
+                for(var k in user.conditions){
+                    userConditions.push(user.conditions[k]['name']);
+                }
+                console.log(userConditions);
+               for(var key in allConditions){
+                  
+               %>
+                            <option value="<%=allConditions[key]['condId']%>" <%=(userConditions.indexOf(allConditions[key][ 'conditionName'])!=- 1)
+                                ? 'selected' : '' %>>
+                                <%=allConditions[key]['conditionName']%>
+                            </option>
+                            <%}%>
+                    </select>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title">Conditions</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </form>
+    <div class="block block-strong row">
+        <div class="col">
+            <a class="button convert-form-to-data" id="FindtoSelectCoach-button">List Care Coach</a>
+        </div>
+    </div>
+</div>
+<div class="page-content" id="selectCoach-page" style="display: none;">
+    <div class="block block-strong row">
+        <div class="col">
+            <a class="button convert-form-to-data" id="selectToFindCoach-button">Back To Find Coach </a>
+        </div>
+    </div>
+    <div class="list no-hairlines">
+        <ul id="coach-container">
+
+        </ul>
+    </div>
+</div>
