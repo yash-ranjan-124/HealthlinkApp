@@ -4,7 +4,7 @@ let jwt = require("jwt-simple");
 let appFunction = require('../libs/appFunctionLib');
 let JWT_SECRET = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
 /* GET home page. */
-router.get('/program1/home', async (req, res, next) => {
+router.get('/program2/home', async (req, res, next) => {
 
   let program = "program1";
   let data = {
@@ -23,8 +23,8 @@ router.get('/program1/home', async (req, res, next) => {
     data.allConditions = conditions_data;
     let userConditions = await appFunction.getUserConditions(token_data.id);
     data.user.conditions = userConditions;
-    data.theme = "color-theme-black";
-    data.appname = "Arthritis Support";
+    data.theme = "color-theme-blue";
+    data.appname = "Care Coach Assistance";
 
     res.render("user_home", data);
 
@@ -36,7 +36,7 @@ router.get('/program1/home', async (req, res, next) => {
 
 
 
-router.post("/program1/findCoach", async (req, res, next) => {
+router.post("/program2/findCoach", async (req, res, next) => {
   let postData = req.body;
   let coachData = await appFunction.getCoach(postData['conditions[]']);
   if (coachData) {
@@ -51,7 +51,7 @@ router.post("/program1/findCoach", async (req, res, next) => {
 
 });
 
-router.post("/program1/bookCoach", async (req, res, next) => {
+router.post("/program2/bookCoach", async (req, res, next) => {
   let postData = req.body;
   let jwt_data = jwt.decode(req.cookies['acc_tkn'], JWT_SECRET);
   let booking_response = await appFunction.bookCoach(jwt_data['id'], postData["coachId"]);
@@ -122,7 +122,7 @@ router.post("/genToken", async (req, res) => {
 });
 
 
-router.get("/program1/registerUser", async (req, res, next) => {
+router.get("/program2/registerUser", async (req, res, next) => {
   let program = "program1";
   let data = {};
   data.fname = req.query['fname'];
