@@ -33,108 +33,42 @@ var HomeLib = function () {
         bindEventsToElements: function () {
             var programName = $$("#appTitle").html();
             var current = this;
-            $$("#HomeToHireCoach-button").on("click", function () {
 
-                list(["userhome-page", "listProgram-page", "heartCare-page", "arthritisCare-page", "programToHome", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html("Find Coach");
-                list(["hireCoach-page"]).showElements();
-
-            });
-            $$("#findCoach-link").on("click", function () {
-
-                list(["userhome-page", "selectCoach-page", "listProgram-page", "heartCare-page", "arthritisCare-page", "programToHome", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html("Find Coach");
-                list(["hireCoach-page"]).showElements();
-
-            });
-            $$("#homePage-link").on("click", function () {
-
-                list(["hireCoach-page", "selectCoach-page", "listProgram-page", "heartCare-page", "arthritisCare-page", "programToHome", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html(programName);
-                list(["userhome-page"]).showElements();
-
-
-            });
-            $$("#listProgram-button").on('click', function () {
-
-                list(["hireCoach-page", "selectCoach-page", "userhome-page", "heartCare-page", "arthritisCare-page", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html("Arthritis Care");
-                list(["listProgram-page", "programToHome"]).showElements();
-            });
-
-            $$("#backToHome-button").on("click", function () {
-
-                list(["hireCoach-page", "selectCoach-page", "listProgram-page", "heartCare-page", "arthritisCare-page", "programToHome", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html(programName);
-                list(["userhome-page"]).showElements();
-            });
-            $$("#selectToFindCoach-button").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "heartCare-page", "arthritisCare-page", "listProgram-page", "programToHome", "TAtoAC", "AAtoAC", "LAtoAC"]).removeElements();
-                $$("#appTitle").html("Find Coach");
+            /*------home page tile functionalities--------------------*/
+            $$("#requestCoach-button").on("click", function () {
+                list(["userHome-page"]).removeElements();
+                $("#appTitle").html("Request Care Coach");
                 list(["hireCoach-page"]).showElements();
             });
 
+            /*----------------------------------------------------------*/
 
 
-
-            $$("#aboutArthritis-button").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "treatArthritis-page", "livingArthritis-page", "TAtoAC", "programToHome", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("About Arthritis");
-                list(["aboutArthritis-page", "AAtoAC"]).showElements();
-
-
-            });
-            $$("#treatArthritis-button").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "livingArthritis-page", "AAtoAC", "programToHome", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Treatments & Doctor Partnership");
-                list(["treatArthritis-page", "TAtoAC"]).showElements();
-
-
-            });
-            $$("#livingArthritis-button").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "treatArthritis-page", "AAtoAC", "programToHome", "TAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Living with Arthritis");
-                list(["livingArthritis-page", "LAtoAC"]).showElements();
-
-
+            /*------home page side link functionalities--------------------*/
+            $$("#requestCoach-link").on("click", function () {
+                list(["userHome-page"]).removeElements();
+                $("#appTitle").html("Request Care Coach");
+                list(["hireCoach-page"]).showElements();
             });
 
-
-            $$("#programToHome").on("click", function () {
-                list(["selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "treatArthritis-page", "AAtoAC", "programToHome", "TAtoAC", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Living with Arthritis");
-                list(["userhome-page"]).showElements();
+            $$("#home-link").on("click", function () {
+                list(["hireCoach-page"]).removeElements();
+                $("#appTitle").html(programName);
+                list(["userHome-page"]).showElements();
             });
-            $$("#AAtoAC").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "treatArthritis-page", "AAtoAC", "TAtoAC", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Living with Arthritis");
-                list(["listProgram-page", "programToHome"]).showElements();
-            });
-            $$("#TAtoAC").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "treatArthritis-page", "AAtoAC", "TAtoAC", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Living with Arthritis");
-                list(["listProgram-page", "programToHome"]).showElements();
-
-            });
-            $$("#LAtoAC").on("click", function () {
-                list(["userhome-page", "selectCoach-page", "arthritisCare-page", "listProgram-page", "hireCoach-page", "heartCare-page", "aboutArthritis-page", "treatArthritis-page", "AAtoAC", "TAtoAC", "LAtoAC"]).removeElements();
-
-                $$("#appTitle").html("Living with Arthritis");
-                list(["listProgram-page", "programToHome"]).showElements();
-
-            });
-
             $$("#logout-link").on("click", function () {
                 commonLib.deleteCookie('type');
                 commonLib.deleteCookie('acc_tkn');
                 window.location.href = "/" + PROGRAM_NAME + "/login";
             });
+            /*----------------------------------------------------------*/
+
+
+
+
+
+
+            /*--------care coach page functionalities--------------*/
 
             $$("#height").on("click", function () {
                 $$("#alert-box").css("display", "none");
@@ -147,10 +81,11 @@ var HomeLib = function () {
             $$("#conditions").on("click", function () {
                 $$("#alert-box").css("display", "none");
             });
-
             $$("#FindtoSelectCoach-button").on("click", function () {
                 current.findCoach();
             });
+            /*--------------------------------------------------------------*/
+
         },
         changeNavBarAsPerDevice: function (isIOS, isAndroid) {
             if (isAndroid) {

@@ -13,8 +13,8 @@
         </div>
         <div class="list links-list no-hairlines" style="margin-top:0px">
             <ul class="menu">
-                <li class="accordion-item">
-                    <a href="#" class="item-content">
+                <li class="accordion-item" id="home-link">
+                    <a href="#" class="panel-close item-content">
                         <div class="item-inner">
                             <div class="item-title">
                                 <i class="fa fa-home"></i>&nbsp;Home</div>
@@ -24,16 +24,16 @@
                 </li>
 
 
-                <li class="accordion-item">
-                    <a href="#" class="item-content">
+                <li class="accordion-item" id="requestCoach-link">
+                    <a href="#" class="item-content panel-close">
                         <div class="item-inner">
                             <div class="item-title">
                                 <i class="fa fa-user-md"></i>&nbsp;Request Coach</div>
                         </div>
                     </a>
                 </li>
-                <li class="accordion-item">
-                    <a href="#" class="item-content">
+                <li class="accordion-item" id="logout-link">
+                    <a href="#" class="item-content panel-close">
                         <div class="item-inner">
                             <div class="item-title">
                                 <i class="fa fa-sign-out"></i>&nbsp;Logout</div>
@@ -72,7 +72,7 @@
                     </div>
                     <!-- /End of Top Navbar-->
 
-                    <div class="page-content" id="userHome-page" style="background: url(https://www.drinkerbiddle.com/-/media/images/cropped/industries/healthcare.jpg) no-repeat">
+                    <div class="page-content" id="userHome-page" style="background: url(https://www.drinkerbiddle.com/-/media/images/cropped/industries/healthcare.jpg) no-repeat;display:none">
                         <div class="content-block" style="height: 100%;">
                             <div class="row" style="height: 100%">
                                 <div class="col" style="width: 50%">
@@ -148,7 +148,13 @@
                         </div>
                     </div>
 
-
+                    <%-include about.ejs%>
+                    <%-include program.ejs%>
+                    <%-include careCoach.ejs%>
+                    <%-include htip.ejs%>
+                    <%-include askqueries.ejs%>
+                    <%-include contact.ejs%>
+                        
 
 
 
@@ -167,10 +173,10 @@
         let $$ = Dom7;
         var PROGRAM_NAME = "<%=program%>";
     </script>
-    <script src="/javascripts/common.js"></script>
-    <script src="/javascripts/home_user.js"></script>
-    <script>
-        commonLib.init();
-        HomeLib.init();
-    </script>
-    <%-include footer.ejs%>
+                            <script src="/javascripts/common.js"></script>
+                            <script src="/javascripts/home_user.js"></script>
+                            <script>
+                                commonLib.init();
+                                HomeLib.init();
+                            </script>
+                            <%-include footer.ejs%>
