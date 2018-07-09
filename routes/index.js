@@ -94,7 +94,7 @@ router.get('/program2/care_home', async (req, res, next) => {
 });
 
 router.all("/program2/register", async (req, res, next) => {
-  let program_name = req.params.program;
+  let program_name = "program2";
   if (req.method == "POST") {
     let postData = req.body;
 
