@@ -7,7 +7,7 @@ let JWT_SECRET = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
 router.get('/program2/home', async (req, res, next) => {
 
   let program = "program2";
-
+  let data = {};
   console.log(req.cookies['type']);
   if (req.cookies['acc_tkn'] && req.cookies['acc_tkn'] != "" && req.cookies['type'] && req.cookies['type'] == "patient") {
     data.title = "Home";
