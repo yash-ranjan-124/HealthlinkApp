@@ -36,9 +36,34 @@ var HomeLib = function () {
 
             /*------home page tile functionalities--------------------*/
             $$("#requestCoach-button").on("click", function () {
-                list(["userHome-page"]).removeElements();
+                list(["userHome-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Request Care Coach");
                 list(["hireCoach-page"]).showElements();
+            });
+            $$("#aboutUs-button").on("click", function () {
+                list(["userHome-page", "program-page", "hireCoach-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html("About");
+                list(["about-page"]).showElements();
+            });
+            $$("#prgms-button").on("click", function () {
+                list(["userHome-page", "hireCoach-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html("Our Programs");
+                list(["program-page"]).showElements();
+            });
+            $$("#htip-button").on("click", function () {
+                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html("Tips");
+                list(["htip-page"]).showElements();
+            });
+            $$("#askQ-button").on("click", function () {
+                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html("Queries");
+                list(["askQ-page"]).showElements();
+            });
+            $$("#contact-button").on("click", function () {
+                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page"]).removeElements();
+                $("#appTitle").html("Contact Us");
+                list(["contact-page"]).showElements();
             });
 
             /*----------------------------------------------------------*/
@@ -46,13 +71,13 @@ var HomeLib = function () {
 
             /*------home page side link functionalities--------------------*/
             $$("#requestCoach-link").on("click", function () {
-                list(["userHome-page"]).removeElements();
+                list(["userHome-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Request Care Coach");
                 list(["hireCoach-page"]).showElements();
             });
 
             $$("#home-link").on("click", function () {
-                list(["hireCoach-page"]).removeElements();
+                list(["hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html(programName);
                 list(["userHome-page"]).showElements();
             });

@@ -6,12 +6,8 @@ let JWT_SECRET = Buffer.from('fe1a1915a379f3be5394b64d14794932', 'hex');
 /* GET home page. */
 router.get('/program2/home', async (req, res, next) => {
 
-  let program = "program1";
-  let data = {
-    firstname: "yash",
-    lastname: "raj",
-    user_id: "123"
-  };
+  let program = "program2";
+
   console.log(req.cookies['type']);
   if (req.cookies['acc_tkn'] && req.cookies['acc_tkn'] != "" && req.cookies['type'] && req.cookies['type'] == "patient") {
     data.title = "Home";
@@ -123,7 +119,7 @@ router.post("/genToken", async (req, res) => {
 
 
 router.get("/program2/registerUser", async (req, res, next) => {
-  let program = "program1";
+  let program = "program2";
   let data = {};
   data.fname = req.query['fname'];
   data.lname = req.query['lname'];
