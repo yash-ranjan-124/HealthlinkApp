@@ -36,32 +36,32 @@ var HomeLib = function () {
 
             /*------home page tile functionalities--------------------*/
             $$("#requestCoach-button").on("click", function () {
-                list(["userHome-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "program-page", "selectCoach-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Request Care Coach");
                 list(["hireCoach-page"]).showElements();
             });
             $$("#aboutUs-button").on("click", function () {
-                list(["userHome-page", "program-page", "hireCoach-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "program-page", "selectCoach-page", "hireCoach-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("About");
                 list(["about-page"]).showElements();
             });
             $$("#prgms-button").on("click", function () {
-                list(["userHome-page", "hireCoach-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "hireCoach-page", "selectCoach-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Our Programs");
                 list(["program-page"]).showElements();
             });
             $$("#htip-button").on("click", function () {
-                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "hireCoach-page", "selectCoach-page", "program-page", "about-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Tips");
                 list(["htip-page"]).showElements();
             });
             $$("#askQ-button").on("click", function () {
-                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "hireCoach-page", "selectCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Queries");
                 list(["askQ-page"]).showElements();
             });
             $$("#contact-button").on("click", function () {
-                list(["userHome-page", "hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page"]).removeElements();
+                list(["userHome-page", "hireCoach-page", "selectCoach-page", "program-page", "about-page", "htip-page", "askQ-page"]).removeElements();
                 $("#appTitle").html("Contact Us");
                 list(["contact-page"]).showElements();
             });
@@ -71,13 +71,13 @@ var HomeLib = function () {
 
             /*------home page side link functionalities--------------------*/
             $$("#requestCoach-link").on("click", function () {
-                list(["userHome-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["userHome-page", "program-page", "selectCoach-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html("Request Care Coach");
                 list(["hireCoach-page"]).showElements();
             });
 
             $$("#home-link").on("click", function () {
-                list(["hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                list(["hireCoach-page", "selectCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                 $("#appTitle").html(programName);
                 list(["userHome-page"]).showElements();
             });
@@ -94,7 +94,11 @@ var HomeLib = function () {
 
 
             /*--------care coach page functionalities--------------*/
-
+            $$("#backToHome-button").on("click", function () {
+                list(["hireCoach-page", "selectCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html(programName);
+                list(["userHome-page"]).showElements();
+            });
             $$("#height").on("click", function () {
                 $$("#alert-box").css("display", "none");
             });
@@ -109,6 +113,12 @@ var HomeLib = function () {
             $$("#FindtoSelectCoach-button").on("click", function () {
                 current.findCoach();
             });
+            $$("#selectToFindCoach-button").on("click", function () {
+                list(["userHome-page", "selectCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
+                $("#appTitle").html("Request Care Coach");
+                list(["hireCoach-page"]).showElements();
+            });
+
             /*--------------------------------------------------------------*/
 
         },
@@ -195,10 +205,10 @@ var HomeLib = function () {
                         App.dialog.close();
                         if (!res.error && res.error != 1) {
                             // console.log(res);
-                            $$("#userhome-page").css("display", "none");
-                            $$("#hireCoach-page").css("display", "none");
+
+                            list(["hireCoach-page", "program-page", "about-page", "htip-page", "askQ-page", "contact-page"]).removeElements();
                             $$("#appTitle").html("Book Care Coach");
-                            $$("#selectCoach-page").css("display", "block");
+                            list(["selectCoach-page"]).showElements();
                             $$("#coach-container li").remove(elem);
                             var elem = "";
                             for (key in res) {
