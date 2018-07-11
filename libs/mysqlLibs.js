@@ -2,9 +2,9 @@ let mysql = require("mysql");
 
 class MysqlLib {
     constructor() {
-        this.hostname = "18.219.252.124",
-            this.username = "root",
-            this.password = "root",
+        this.hostname = "healthlink-program.c9yf7rqtpbpf.us-east-2.rds.amazonaws.com",
+            this.username = "rescuehealthlink",
+            this.password = "!.=i(%78Ba#:-(g",
             this.database = "Healthlink_programs";
         this.connection = mysql.createConnection({
             host: this.hostname,
