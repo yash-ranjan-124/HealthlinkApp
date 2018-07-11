@@ -43,7 +43,7 @@ var commonLib = function () {
                 ]
             });
             window.App = App;
-
+            this.injectStyle(isIOS, isAndroid);
 
         },
         detectDevice() {
@@ -55,19 +55,13 @@ var commonLib = function () {
                 return "other";
             }
         },
-        injectStyleSheet: function (isIOS, isAndroid) {
+        injectStyle: function (isIOS, isAndroid) {
             if (isAndroid) {
-                $$('head').append(
-                    '<link rel="stylesheet" href="/framework7/dist/css/framework7.min.css">'
-                );
+                console.log(isAndroid);
             } else if (isIOS) {
-                $$('head').append(
-                    '<link rel="stylesheet" href="/framework7/dist/css/framework7.min.css">'
-                );
+                $$(".bg-color-red").css("background", "#f44336!important");
             } else {
-                $$('head').append(
-                    '<link rel="stylesheet" href="/framework7/dist/css/framework7.min.css">'
-                );
+                console.log("other");
             }
 
         },

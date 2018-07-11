@@ -77,6 +77,10 @@
                             <div class="row" style="height: 100%">
                                 <div class="col" style="width: 50%">
                                     <div class="row">
+
+
+
+
                                         <div class="bg-color-red tileCardTL" id="aboutUs-button">
                                             <div class="tileContent icon-container">
                                                 <i class="fa fa-user-o mainIcon" aria-hidden="true"></i>
@@ -149,12 +153,12 @@
                     </div>
 
                     <%-include about.ejs%>
-                    <%-include program.ejs%>
-                    <%-include careCoach.ejs%>
-                    <%-include htip.ejs%>
-                    <%-include askqueries.ejs%>
-                    <%-include contact.ejs%>
-                        
+                        <%-include program.ejs%>
+                            <%-include careCoach.ejs%>
+                                <%-include htip.ejs%>
+                                    <%-include askqueries.ejs%>
+                                        <%-include contact.ejs%>
+
 
 
 
@@ -173,10 +177,10 @@
         let $$ = Dom7;
         var PROGRAM_NAME = "<%=program%>";
     </script>
-                            <script src="/javascripts/common.js"></script>
-                            <script src="/javascripts/home_user.js"></script>
-                            <script>
-                                commonLib.init();
-                                HomeLib.init();
-                            </script>
-                            <%-include footer.ejs%>
+    <script src="/javascripts/common.js"></script>
+    <script src="/javascripts/home_user.js"></script>
+    <script>
+        commonLib.init();
+        HomeLib.init();
+    </script>
+    <%-include footer.ejs%>
