@@ -59,7 +59,25 @@ var commonLib = function () {
             if (isAndroid) {
                 console.log(isAndroid);
             } else if (isIOS) {
-                $$(".bg-color-red").css("background", "#f44336!important");
+                $("#aboutUs-button").removeClass("bg-color-red");
+                $("#aboutUs-button").addClass("ios-bg-red");
+
+                $("#prgms-button").removeClass("bg-color-blue");
+                $("#prgms-button").addClass("ios-bg-blue");
+
+                $("#requestCoach-button").removeClass("bg-color-blue");
+                $("#requestCoach-button").addClass("ios-bg-blue");
+
+                $("#htip-button").removeClass("bg-color-red");
+                $("#htip-button").addClass("ios-bg-red");
+
+                $("#askQ-button").removeClass("bg-color-red");
+                $("#askQ-button").addClass("ios-bg-red");
+
+                $("#contact-button").removeClass("bg-color-blue");
+                $("#contact-button").addClass("ios-bg-blue");
+
+
             } else {
                 console.log("other");
             }
