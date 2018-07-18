@@ -218,7 +218,7 @@ var HomeLib = function () {
                                 elem += '<div class="item-inner">';
                                 elem += '<div class="item-title">';
                                 elem += '<div class="item-header">Name</div>';
-                                elem += '| ' + res[key].fname + " " + res[key].lname;
+                                elem += res[key].fname + " " + res[key].lname;
                                 elem += '</div>';
                                 elem += '<div class="item-after">Details</div>';
                                 elem += '</div>';
