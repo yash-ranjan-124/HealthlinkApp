@@ -35,22 +35,8 @@
                 }).open();
 
             } else {
-                App.dialog.create({
-                    title: 'Success',
-                    text: '<%=message%>',
-                    buttons: [
-                        {
-                            text: 'Go To Home',
-                            onClick: function () {
-                                window.location.href = "/" + PROGRAM_NAME + "/home";
-
-                            }
-
-                        },
-
-                    ],
-                    verticalButtons: true,
-                }).open();
+              
+                window.location.href = "/" + PROGRAM_NAME + "/home";
             }
 
 
