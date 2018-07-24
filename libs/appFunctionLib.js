@@ -170,7 +170,7 @@ class AppFunctionLib {
                 return booking_resp;
             }
             else {
-                return { error: 1, message: "Care Coach Allready Booked!!" };
+                return { error: 1, message: "Care Coach Already Booked!!" };
             }
 
         } catch (error) {
